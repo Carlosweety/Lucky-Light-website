@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>佳光电子（台山）有限公司</title>
+  <meta name="description" content="佳光电子（台山）有限公司，专注LED产品生产，主营直插式LED、贴片式LED、数码管。" />
+  <style>
+    :root {
+      --bg: #07111e;
+      --bg-soft: #0c182a;
+      --card: #101b2c;
+      --line: rgba(255,255,255,.08);
+      --text: #eef4ff;
+      --muted: #9eafc8;
+      --primary: #2fa7ff;
+      --primary-2: #7cd9ff;
+      --accent: #1dd6c1;
+      --max: 1200px;
+      --shadow: 0 24px 60px rgba(0,0,0,.28);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(47,167,255,.18), transparent 24%),
+        radial-gradient(circle at left center, rgba(29,214,193,.08), transparent 20%),
+        linear-gradient(180deg, #07111e 0%, #0a1421 55%, #08111b 100%);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(6, 14, 25, .74);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 12px 28px rgba(47,167,255,.18);
+      padding: 6px;
+      object-fit: contain;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: .5px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 86vh;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(5,11,20,.84) 0%, rgba(6,14,24,.74) 42%, rgba(6,14,24,.32) 70%, rgba(6,14,24,.18) 100%),
+        url("assets/company-02.png") center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7,17,30,.22), rgba(7,17,30,.48));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(124,217,255,.18);
+      background: rgba(255,255,255,.04);
+      color: var(--primary-2);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 34px;
+      align-items: end;
+    }
+
+    .hero h2 {
+      margin: 0 0 18px;
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.12;
+      max-width: 760px;
+    }
+
+    .hero p {
+      margin: 0 0 28px;
+      max-width: 760px;
+      color: #d6e2f5;
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: .2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #05101a;
+      box-shadow: 0 14px 28px rgba(47,167,255,.24);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 760px;
+    }
+
+    .stat {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      background: rgba(9,18,31,.46);
+      backdrop-filter: blur(10px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: #c7d6ec;
+      font-size: 13px;
+    }
+
+    .hero-side {
+      padding: 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(11,21,36,.85), rgba(9,18,31,.76));
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-side h3 {
+      margin: 0 0 12px;
+      font-size: 28px;
+    }
+
+    .hero-side p {
+      margin: 0 0 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .mini-grid img {
+      height: 130px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    section {
+      padding: 78px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      margin-bottom: 28px;
+    }
+
+    .section-head .kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: var(--primary-2);
+      text-transform: uppercase;
+    }
+
+    .section-head h3 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 40px);
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      padding: 26px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    }
+
+    .card h4 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .products-grid,
+    .adv-grid,
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .history-grid,
+    .policy-grid,
+    .clean-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 22px;
+      padding: 0 0 0 14px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -25px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 0 0 4px rgba(47,167,255,.14);
+    }
+
+    .timeline-item h5 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cert-grid,
+    .org-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .cert-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .cert-gallery.cert-gallery-4 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cert-gallery.cert-gallery-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .product-card,
+    .adv-card {
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16,27,44,.94), rgba(9,18,30,.9));
+    }
+
+    .product-card .num {
+      display: block;
+      color: var(--primary-2);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .product-card h4,
+    .adv-card h4 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    .adv-card h4 { font-size: 18px; }
+
+    .gallery-card {
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #0c1624;
+      box-shadow: var(--shadow);
+    }
+
+    .history-images {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .history-images img {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: #fff;
+    }
+
+    .cert-card,
+    .org-card,
+    .policy-card,
+    .clean-card {
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16,27,44,.94), rgba(9,18,30,.9));
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .cert-card img {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: #fff;
+    }
+
+    .cert-item {
+      text-align: center;
+    }
+
+    .cert-item img {
+      height: 520px;
+      object-fit: contain;
+    }
+
+    .cert-item .caption {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .product-gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .product-gallery img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .org-card img,
+    .policy-card img,
+    .clean-card img {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: #fff;
+      padding: 10px;
+    }
+
+    .policy-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .policy-list li + li {
+      margin-top: 10px;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .gallery-card .caption {
+      padding: 16px 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .process-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .process-step {
+      padding: 22px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+
+    .process-step strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .process-step span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-box {
+      padding: 26px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16,27,44,.94), rgba(9,18,30,.9));
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .contact-item:last-child { border-bottom: none; }
+
+    .contact-label {
+      min-width: 74px;
+      color: var(--primary-2);
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .products-grid,
+      .adv-grid,
+      .gallery-grid,
+      .history-grid,
+      .policy-grid,
+      .clean-grid,
+      .cert-grid,
+      .cert-gallery,
+      .process-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .product-gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px 18px;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <img class="brand-mark" src="assets/company-logo.jpg" alt="佳光电子公司Logo" />
+        <div>
+          <h1>佳光电子（台山）有限公司</h1>
+          <small>专注 LED 产品生产与制造</small>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">公司简介</a>
+        <a href="#products">产品中心</a>
+        <a href="#gallery">厂区展示</a>
+        <a href="#history">公司履历</a>
+        <a href="#policy">经营理念</a>
+        <a href="#environment-policy">环境政策</a>
+        <a href="#ehs-policy">安全健康</a>
+        <a href="#clean-policy">清洁生产</a>
+        <a href="#advantage">核心优势</a>
+        <a href="#organization">组织架构</a>
+        <a href="#certification">品质认证</a>
+        <a href="#trademark">商标资质</a>
+        <a href="#process">生产流程</a>
+        <a href="#contact">联系我们</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="eyebrow">LED 制造企业 · 企业官网展示版</div>
+        <div class="hero-grid">
+          <div>
+            <h2>专注 LED 产品生产<br>以专业制造服务全球客户</h2>
+            <p>
+              佳光电子（台山）有限公司专注于 LED 产品生产，主营直插式 LED、贴片式 LED 与数码管。公司位于广东省台山市，以稳定品质、成熟工艺、规范管理与持续优化的制造能力，为客户提供可靠的光电产品支持。
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">立即联系</a>
+              <a class="btn btn-secondary" href="#gallery">查看厂区</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat">
+                <strong>LED 制造</strong>
+                <span>专注电子与光电元件生产</span>
+              </div>
+              <div class="stat">
+                <strong>3 大类产品</strong>
+                <span>直插式 / 贴片式 / 数码管</span>
+              </div>
+              <div class="stat">
+                <strong>工厂展示</strong>
+                <span>已整合外观、大门与车间实景</span>
+              </div>
+            </div>
+          </div>
+          <aside class="hero-side">
+            <h3>制造实力可视化展示</h3>
+            <p>网站已加入您提供的厂区与车间实拍，可进一步增强客户对企业规模与生产能力的信任感。</p>
+            <div class="mini-grid">
+              <img src="assets/company-01.png" alt="公司外观" />
+              <img src="assets/company-02.png" alt="公司大门" />
+              <img src="assets/workshop-01.png" alt="车间设备" />
+              <img src="assets/workshop-03.png" alt="产线设备" />
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">About Us</span>
+          <h3>公司简介</h3>
+          <p>
+            佳光电子（台山）有限公司位于广东省台山市台城工业园东坑区85号，专注 LED 产品的生产制造。公司以专业制造、稳定品质与高效协作为基础，持续为客户提供更具竞争力的产品与服务支持。
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="card">
+            <h4>主营方向</h4>
+            <p>
+              公司主要生产 LED 产品，涵盖直插式 LED、贴片式 LED 与数码管等类别，可应用于电子产品、显示模组、指示系统与相关光电领域。
+            </p>
+          </div>
+          <div class="card">
+            <h4>企业理念</h4>
+            <ul>
+              <li>坚持品质稳定，注重产品一致性</li>
+              <li>重视生产效率与交付配合</li>
+              <li>以成熟工艺服务长期合作客户</li>
+              <li>持续优化制造流程与产品表现</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Products</span>
+          <h3>产品中心</h3>
+          <p>
+            我已根据您提供的公司简介 PPT，补入部分产品分类与规格信息。后续若再提供产品实拍、型号表与应用资料，我可继续扩展成更完整的产品展示页面。
+          </p>
+        </div>
+        <div class="products-grid">
+          <article class="product-card">
+            <span class="num">01</span>
+            <h4>直插式 LED（LAMP）</h4>
+            <p>
+              产品种类多样，光色涵盖红、橙、黄、绿、蓝、白、IR、PT 等；外观可分为圆形、椭圆、方形、塔形、平头形、尖头形等，常见尺寸包括 Φ3mm、Φ5mm。
+            </p>
+            <div class="product-gallery">
+              <img src="assets/lamp-01.png" alt="直插式LED产品图1" />
+              <img src="assets/lamp-02.png" alt="直插式LED产品图2" />
+              <img src="assets/lamp-03.png" alt="直插式LED产品图3" />
+              <img src="assets/lamp-04.png" alt="直插式LED产品图4" />
+              <img src="assets/lamp-05.png" alt="直插式LED产品图5" />
+            </div>
+          </article>
+          <article class="product-card">
+            <span class="num">02</span>
+            <h4>贴片式 LED / 大功率</h4>
+            <p>
+              SMD 产品覆盖 3528、5050、5630、3020 等规格，并包含单晶、三晶、大功率与 COB 等类别，可满足不同电子与照明应用需求。
+            </p>
+            <div class="product-gallery">
+              <img src="assets/smd-01.png" alt="贴片式LED产品图1" />
+              <img src="assets/smd-02.png" alt="贴片式LED产品图2" />
+              <img src="assets/smd-03.png" alt="贴片式LED产品图3" />
+              <img src="assets/smd-04.png" alt="贴片式LED产品图4" />
+              <img src="assets/smd-05.png" alt="贴片式LED产品图5" />
+            </div>
+          </article>
+          <article class="product-card">
+            <span class="num">03</span>
+            <h4>数码管 / 特殊封装</h4>
+            <p>
+              数码管主要规格包含单8、双8、三位、四位与不同尺寸点阵；另具备食人鱼、小蝦米等产品类别，适用于显示、指示与多样化应用场景。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Factory Gallery</span>
+          <h3>厂区与车间展示</h3>
+          <p>
+            以下图片来自您提供的公司外观、大门与车间现场照片，可有效提升官网的真实感、专业感与客户信赖度。
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="assets/company-01.png" alt="公司外观" />
+            <div class="caption">公司外观</div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/company-02.png" alt="公司大门" />
+            <div class="caption">公司大门</div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/solar-roof.png" alt="公司楼顶光伏系统" />
+            <div class="caption">公司楼顶光伏系统</div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/workshop-01.png" alt="贴片车间设备" />
+            <div class="caption">车间设备展示</div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/workshop-02.png" alt="生产设备现场" />
+            <div class="caption">生产线现场</div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/workshop-03.png" alt="生产车间" />
+            <div class="caption">制造车间</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="history">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">History</span>
+          <h3>公司履历</h3>
+          <p>
+            根据您提供的公司履历资料，我已整理出可用于官网展示的发展时间轴，帮助客户更直观理解企业成长历程、认证进展与产线扩充过程。
+          </p>
+        </div>
+        <div class="history-grid">
+          <div class="card">
+            <div class="timeline">
+              <div class="timeline-item">
+                <h5>2006年5月</h5>
+                <p>申请到省高新技术企业。</p>
+              </div>
+              <div class="timeline-item">
+                <h5>2009年11月</h5>
+                <p>通过 ISO9001:2008 品质体系认证（认证公司：TUV NORD）。</p>
+              </div>
+              <div class="timeline-item">
+                <h5>2012年8月</h5>
+                <p>通过 ISO14001:2004 环境体系认证（认证公司：TUV NORD）。</p>
+              </div>
+              <div class="timeline-item">
+                <h5>2012年12月</h5>
+                <p>通过安全生产标准化 3 级体系认证（认证单位：江门市安监局与台山市安监局）。</p>
+              </div>
+              <div class="timeline-item">
+                <h5>2013年8月</h5>
+                <p>新增数码管、SMD 及大功率生产车间。</p>
+              </div>
+            </div>
+          </div>
+          <div class="history-images">
+            <img src="assets/history-02.png" alt="公司履历资料图一" />
+            <img src="assets/history-03.png" alt="公司履历资料图二" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="policy">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Philosophy</span>
+          <h3>经营理念与品质政策</h3>
+          <p>
+            您提供的这份资料非常适合放在官网中段，能够清楚传达企业经营方向、质量意识与持续改善文化，让客户更容易建立信任。
+          </p>
+        </div>
+        <div class="policy-grid">
+          <div class="policy-card">
+            <img src="assets/quality-policy.png" alt="经营理念与品质政策" />
+          </div>
+          <div class="policy-card">
+            <h4 style="margin-top:0; font-size:24px;">企业经营理念</h4>
+            <ul class="policy-list">
+              <li>以市场导向为依據，品质与能量为基础，达永续经营之目的。</li>
+              <li>稳中求进、精益生产，没有最好，只有更好。</li>
+              <li>以顾客为中心，持续改善为原则，追求产品制造合格率达 99% 以上。</li>
+            </ul>
+            <p style="color: var(--muted); margin-top: 18px;">
+              这段内容能够很好地体现公司对市场需求、制造质量、持续改善与客户满意度的重视，也与现有的 ISO 认证、工厂展示与绿色制造形象形成呼应。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="environment-policy">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Environment Policy</span>
+          <h3>环境政策</h3>
+          <p>
+            这份环境政策可与 ISO14001、清洁生产认证及楼顶光伏系统共同构成企业环境管理主线，强化对外展示中的环保责任与可持续经营形象。
+          </p>
+        </div>
+        <div class="clean-grid">
+          <div class="clean-card">
+            <img src="assets/environment-policy.png" alt="环境政策" />
+          </div>
+          <div class="clean-card">
+            <h4 style="margin-top:0; font-size:24px;">环境管理核心方向</h4>
+            <ul class="policy-list">
+              <li><strong>法律法规及其它要求</strong>：遵循相关法规与环境管理要求。</li>
+              <li><strong>污染预防</strong>：强化预防措施，降低环境风险与污染排放。</li>
+              <li><strong>节约能源</strong>：推动节能措施，提升资源使用效率。</li>
+              <li><strong>持续改进</strong>：持续优化管理与执行效果。</li>
+              <li><strong>内、外部信息交流</strong>：重视环境信息沟通与透明度。</li>
+            </ul>
+            <p style="color: var(--muted); margin-top: 18px;">
+              这组内容与公司的环境管理认证、光伏系统与清洁生产政策互相呼应，可更完整地表达企业在绿色制造与环境责任上的长期投入。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ehs-policy">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Safety & Health</span>
+          <h3>安全、职业健康政策</h3>
+          <p>
+            这项政策能够补足企业在 EHS（环境、健康与安全）管理方面的对外表达，让网站从品质、环境进一步延伸到员工安全与职业健康责任。
+          </p>
+        </div>
+        <div class="clean-grid">
+          <div class="clean-card">
+            <img src="assets/ehs-policy.png" alt="安全、职业健康政策" />
+          </div>
+          <div class="clean-card">
+            <h4 style="margin-top:0; font-size:24px;">EHS 管理核心原则</h4>
+            <ul class="policy-list">
+              <li><strong>安全第一</strong>：将安全作为生产经营的重要前提。</li>
+              <li><strong>预防为主</strong>：强化风险预防与事前管理意识。</li>
+              <li><strong>综合治理</strong>：从制度、现场、流程多方面协同推进。</li>
+              <li><strong>全员参与</strong>：推动全体人员共同落实安全与健康责任。</li>
+              <li><strong>持续改进</strong>：不断优化职业健康与安全管理表现。</li>
+            </ul>
+            <p style="color: var(--muted); margin-top: 18px;">
+              这项内容可与公司的安全生产标准化认证、环境政策与清洁生产体系结合展示，使网站在企业治理与责任管理方面更完整、更具说服力。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clean-policy">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Cleaner Production</span>
+          <h3>清洁生产政策</h3>
+          <p>
+            在既有的环境管理认证与清洁生产荣誉基础上，这份政策文件进一步明确了公司在节能、降耗、减污与增效方面的管理方向，能很好地强化企业绿色制造形象。
+          </p>
+        </div>
+        <div class="clean-grid">
+          <div class="clean-card">
+            <img src="assets/cleaner-production-policy.png" alt="清洁生产政策" />
+          </div>
+          <div class="clean-card">
+            <h4 style="margin-top:0; font-size:24px;">绿色制造与持续改善方向</h4>
+            <ul class="policy-list">
+              <li><strong>节能</strong>：提升能源使用效率，减少能源浪费。</li>
+              <li><strong>降耗</strong>：优化生产过程，降低物料与资源消耗。</li>
+              <li><strong>减污</strong>：减少污染排放，提升环境管理表现。</li>
+              <li><strong>增效</strong>：在制造过程中兼顾效率提升与可持续发展。</li>
+            </ul>
+            <p style="color: var(--muted); margin-top: 18px;">
+              此区块与光伏系统、ISO14001、清洁生产相关荣誉搭配展示时，可形成较完整的企业环保、节能与可持续经营叙事。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="advantage">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Advantage</span>
+          <h3>核心优势</h3>
+          <p>
+            结合现有资料，首页已可初步体现制造型企业的专业形象。后续若补充认证、设备数量、年产能与客户行业，将更完整。
+          </p>
+        </div>
+        <div class="adv-grid">
+          <div class="adv-card">
+            <h4>专注 LED 制造</h4>
+            <p>围绕直插式、贴片式与数码管等产品类别进行持续制造与工艺优化。</p>
+          </div>
+          <div class="adv-card">
+            <h4>实景工厂展示</h4>
+            <p>官网直接展示厂区与车间实拍，强化企业真实感与制造实力的可信呈现。</p>
+          </div>
+          <div class="adv-card">
+            <h4>稳定品质管理</h4>
+            <p>重视生产过程控制与产品一致性，为客户提供更稳定的交付体验。</p>
+          </div>
+          <div class="adv-card">
+            <h4>设备与产线支持</h4>
+            <p>从现场设备照片可直观体现工厂具备较完整的生产与制造基础能力。</p>
+          </div>
+          <div class="adv-card">
+            <h4>企业形象专业</h4>
+            <p>版型参考行业成熟官网，整体更符合 LED 制造企业的对外展示需求。</p>
+          </div>
+          <div class="adv-card">
+            <h4>绿色制造形象</h4>
+            <p>公司楼顶配置光伏系统，有助于展现企业对节能、环保与可持续发展的重视。</p>
+          </div>
+          <div class="adv-card">
+            <h4>低成本易部署</h4>
+            <p>纯静态网站架构，后续可直接部署至虚拟主机、云空间或企业服务器，节约建设成本。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="organization">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Organization</span>
+          <h3>组织架构</h3>
+          <p>
+            公司组织架构覆盖行政、业务、工程、资材、品保与厂务生产等主要职能，有助于体现企业在管理协同、生产执行与品质管控方面的体系化运作能力。
+          </p>
+        </div>
+        <div class="org-grid">
+          <div class="org-card">
+            <img src="assets/organization-chart.png" alt="佳光电子（台山）有限公司组织架构图" />
+          </div>
+          <div class="org-card">
+            <h4 style="margin-top:0; font-size:24px;">管理与生产协同体系</h4>
+            <p style="color: var(--muted); margin-bottom: 18px;">
+              从组织架构图可见，公司在行政管理、财务采购、业务支持、工程技术、资材管理、品保管理与生产制造方面已形成较完整的分工架构，可更有效支持订单执行、品质管理与内部协同。
+            </p>
+            <ul style="color: var(--muted); padding-left: 18px; margin: 0; line-height: 1.9;">
+              <li>管理端涵盖行政、财务、采购、业务与经营管理</li>
+              <li>技术与支持端涵盖工程、资材、品保与环境管理</li>
+              <li>生产端涵盖固晶焊线、灌膠、测试、分光、SMD、样品等主要工序</li>
+              <li>体现企业具备较清晰的部门分工与制造执行体系</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certification">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Certification</span>
+          <h3>品质与认证</h3>
+          <p>
+            公司已取得 ISO9001 质量管理体系认证，体现企业在质量管理、生产规范与持续改善方面的制度化能力，有助于增强客户对产品稳定性与合作可靠性的信任。
+          </p>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-gallery cert-gallery-4">
+              <div class="cert-item">
+                <img src="assets/iso9001-certificate.png" alt="ISO9001质量管理体系认证证书" />
+                <div class="caption">ISO9001 质量管理体系认证</div>
+              </div>
+              <div class="cert-item">
+                <img src="assets/iso14001-certificate.png" alt="ISO14001环境管理体系认证证书" />
+                <div class="caption">ISO14001 环境管理体系认证</div>
+              </div>
+              <div class="cert-item">
+                <img src="assets/cleaner-production-award.png" alt="2019年度台山市清洁生产先进单位荣誉证书" />
+                <div class="caption">2019年度台山市清洁生产先进单位</div>
+              </div>
+              <div class="cert-item">
+                <img src="assets/cleaner-production-certificate.png" alt="江门市级清洁生产企业证书" />
+                <div class="caption">江门市级清洁生产企业</div>
+              </div>
+            </div>
+          </div>
+          <div class="cert-card">
+            <h4 style="margin-top:0; font-size:24px;">品质、环境与清洁生产体系</h4>
+            <p style="color: var(--muted); margin-bottom: 18px;">
+              公司已建立较为完善的质量与环境管理体系，除取得 ISO9001 与 ISO14001 认证外，也获得清洁生产相关荣誉与认定，体现企业在质量控制、环境管理、节能减排与持续改善方面的综合能力。
+            </p>
+            <ul style="color: var(--muted); padding-left: 18px; margin: 0; line-height: 1.9;">
+              <li>ISO9001：质量管理体系认证</li>
+              <li>ISO14001：环境管理体系认证</li>
+              <li>2019年度台山市清洁生产先进单位</li>
+              <li>江门市级清洁生产企业（有效期至 2029 年 03 月）</li>
+              <li>体现企业在品质、环保、清洁生产与可持续发展方面的长期投入</li>
+              <li>有助于增强客户对产品品质、交付能力与环保责任的信任</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trademark">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Trademark</span>
+          <h3>商标资质</h3>
+          <p>
+            商标注册证与续展注册证明可进一步体现公司的品牌资产、知识产权意识与经营合规性，对外展示时能增强客户对企业长期经营稳定性的信任。
+          </p>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-gallery cert-gallery-2">
+              <div class="cert-item">
+                <img src="assets/trademark-certificate.png" alt="商标注册证" />
+                <div class="caption">商标注册证</div>
+              </div>
+              <div class="cert-item">
+                <img src="assets/trademark-renewal.png" alt="商标续展注册证明" />
+                <div class="caption">商标续展注册证明</div>
+              </div>
+            </div>
+          </div>
+          <div class="cert-card">
+            <h4 style="margin-top:0; font-size:24px;">品牌与知识产权保障</h4>
+            <p style="color: var(--muted); margin-bottom: 18px;">
+              根据您提供的资料，公司已完成商标注册并取得续展注册证明，体现企业在品牌建设、知识产权管理与持续经营方面具备较完整的基础。
+            </p>
+            <ul style="color: var(--muted); padding-left: 18px; margin: 0; line-height: 1.9;">
+              <li>商标注册证号：第 3614309 号</li>
+              <li>续展注册有效期至：2035 年 01 月 27 日</li>
+              <li>体现企业品牌标识具备合法注册与持续维护基础</li>
+              <li>有助于增强客户对企业品牌稳定性与正规经营的信任</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Process</span>
+          <h3>生产流程</h3>
+          <p>
+            目前先使用企业官网常见的流程结构展示。若您稍后给我真实工艺流程，我可以替换成更准确的版本。
+          </p>
+        </div>
+        <div class="process-wrap">
+          <div class="process-step">
+            <strong>来料检验</strong>
+            <span>原材料入厂检验与基础品质确认</span>
+          </div>
+          <div class="process-step">
+            <strong>生产封装</strong>
+            <span>依产品类别进行制造加工与工艺处理</span>
+          </div>
+          <div class="process-step">
+            <strong>测试分选</strong>
+            <span>对亮度、电性与一致性进行检测筛选</span>
+          </div>
+          <div class="process-step">
+            <strong>包装出货</strong>
+            <span>完成包装、复检与出货安排</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-head">
+            <span class="kicker">Contact</span>
+            <h3>联系我们</h3>
+            <p>
+              欢迎通过以下方式与我们取得联系，了解产品资料、合作模式或进一步商务沟通。
+            </p>
+          </div>
+          <div class="contact-box">
+            <div class="contact-item">
+              <div class="contact-label">公司</div>
+              <div>佳光电子（台山）有限公司</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">地址</div>
+              <div>广东省台山市台城工业园东坑区85号</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">电话</div>
+              <div><a href="tel:+867505618241">+86 750 5618241</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">邮箱</div>
+              <div><a href="mailto:luckylight@led.com.cn">luckylight@led.com.cn</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h4>下一步可继续增强的内容</h4>
+          <ul>
+            <li>统一品牌标准色与视觉规范</li>
+            <li>补产品实拍与型号参数</li>
+            <li>补真实产线流程图</li>
+            <li>加入品质认证与检测说明</li>
+            <li>扩展为多页面正式官网</li>
+          </ul>
+          <p style="margin-top:18px;">
+            若您愿意，我下一步可以继续把这版升级成更接近正式上线版本的企业网站。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 佳光电子（台山）有限公司 · 版权所有
+    </div>
+  </footer>
+</body>
+</html>
