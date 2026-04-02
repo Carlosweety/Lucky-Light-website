@@ -135,9 +135,14 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1fr;
       gap: 34px;
-      align-items: end;
+      justify-items: center;
+    }
+
+    .hero-grid > div {
+      max-width: 920px;
+      text-align: center;
     }
 
     .hero h2 {
@@ -159,6 +164,7 @@
       flex-wrap: wrap;
       gap: 14px;
       margin-bottom: 26px;
+      justify-content: center;
     }
 
     .btn {
@@ -190,6 +196,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
       max-width: 760px;
+      margin: 0 auto;
     }
 
     .stat {
@@ -671,16 +678,7 @@
               </div>
             </div>
           </div>
-          <aside class="hero-side">
-            <h3>制造实力可视化展示</h3>
-            <p>网站已加入您提供的厂区与车间实拍，可进一步增强客户对企业规模与生产能力的信任感。</p>
-            <div class="mini-grid">
-              <img src="assets/company-01.png" alt="公司外观" />
-              <img src="assets/company-02.png" alt="公司大门" />
-              <img src="assets/workshop-01.png" alt="车间设备" />
-              <img src="assets/workshop-03.png" alt="产线设备" />
-            </div>
-          </aside>
+
         </div>
       </div>
     </section>
