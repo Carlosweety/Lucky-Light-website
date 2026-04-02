@@ -363,6 +363,23 @@
       min-width: 0;
     }
 
+    .policy-quad {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px 24px;
+      align-items: start;
+    }
+
+    .policy-column {
+      min-width: 0;
+    }
+
+    .policy-column .policy-grid,
+    .policy-column .clean-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
     .timeline {
       position: relative;
       padding-left: 28px;
@@ -625,7 +642,8 @@
       .cert-grid,
       .cert-gallery,
       .process-wrap,
-      .policy-pair {
+      .policy-pair,
+      .policy-quad {
         grid-template-columns: 1fr;
       }
 
@@ -862,84 +880,83 @@
         </div>
       </div>
     </section>
+
     <section>
-      <div class="container policy-pair">
-        <div id="policy">
-<div class="section-head">
-          <span class="kicker">Philosophy</span>
-          <h3>经营理念与品质政策</h3>
-        </div>
-        <div class="policy-grid policy-block">
-          <div class="policy-card">
-            <ul class="policy-list">
-              <li>以市场导向为依據，品质与能量为基础，达永续经营之目的。</li>
-              <li>稳中求进、精益生产，没有最好，只有更好。</li>
-              <li>以顾客为中心，持续改善为原则，追求产品制造合格率达 99% 以上。</li>
-            </ul>
+      <div class="container policy-quad">
+        <div id="policy" class="policy-column">
+          <div class="section-head">
+            <span class="kicker">Philosophy</span>
+            <h3>经营理念与品质政策</h3>
+          </div>
+          <div class="policy-grid">
+            <div class="policy-card">
+              <ul class="policy-list">
+                <li>以市场导向为依據，品质与能量为基础，达永续经营之目的。</li>
+                <li>稳中求进、精益生产，没有最好，只有更好。</li>
+                <li>以顾客为中心，持续改善为原则，追求产品制造合格率达 99% 以上。</li>
+              </ul>
+            </div>
           </div>
         </div>
-        </div>
-        <div id="environment-policy">
-<div class="section-head">
-          <span class="kicker">Environment Policy</span>
-          <h3>环境政策</h3>
-        </div>
-        <div class="clean-grid policy-block">
-          <div class="clean-card">
-            <h4 style="margin-top:0; font-size:24px;">环境管理核心方向</h4>
-            <ul class="policy-list">
-              <li><strong>法律法规及其它要求</strong>：遵循相关法规与环境管理要求。</li>
-              <li><strong>污染预防</strong>：强化预防措施，降低环境风险与污染排放。</li>
-              <li><strong>节约能源</strong>：推动节能措施，提升资源使用效率。</li>
-              <li><strong>持续改进</strong>：持续优化管理与执行效果。</li>
-              <li><strong>内、外部信息交流</strong>：重视环境信息沟通与透明度。</li>
-            </ul>
+
+        <div id="environment-policy" class="policy-column">
+          <div class="section-head">
+            <span class="kicker">Environment Policy</span>
+            <h3>环境政策</h3>
+          </div>
+          <div class="clean-grid">
+            <div class="clean-card">
+              <h4 style="margin-top:0; font-size:24px;">环境管理核心方向</h4>
+              <ul class="policy-list">
+                <li><strong>法律法规及其它要求</strong>：遵循相关法规与环境管理要求。</li>
+                <li><strong>污染预防</strong>：强化预防措施，降低环境风险与污染排放。</li>
+                <li><strong>节约能源</strong>：推动节能措施，提升资源使用效率。</li>
+                <li><strong>持续改进</strong>：持续优化管理与执行效果。</li>
+                <li><strong>内、外部信息交流</strong>：重视环境信息沟通与透明度。</li>
+              </ul>
+            </div>
           </div>
         </div>
+
+        <div id="ehs-policy" class="policy-column">
+          <div class="section-head">
+            <span class="kicker">Safety & Health</span>
+            <h3>安全、职业健康政策</h3>
+          </div>
+          <div class="clean-grid">
+            <div class="clean-card">
+              <h4 style="margin-top:0; font-size:24px;">EHS 管理核心原则</h4>
+              <ul class="policy-list">
+                <li><strong>安全第一</strong>：将安全作为生产经营的重要前提。</li>
+                <li><strong>预防为主</strong>：强化风险预防与事前管理意识。</li>
+                <li><strong>综合治理</strong>：从制度、现场、流程多方面协同推进。</li>
+                <li><strong>全员参与</strong>：推动全体人员共同落实安全与健康责任。</li>
+                <li><strong>持续改进</strong>：不断优化职业健康与安全管理表现。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="clean-policy" class="policy-column">
+          <div class="section-head">
+            <span class="kicker">Cleaner Production</span>
+            <h3>清洁生产政策</h3>
+          </div>
+          <div class="clean-grid">
+            <div class="clean-card">
+              <h4 style="margin-top:0; font-size:24px;">绿色制造与持续改善方向</h4>
+              <ul class="policy-list">
+                <li><strong>节能</strong>：提升能源使用效率，减少能源浪费。</li>
+                <li><strong>降耗</strong>：优化生产过程，降低物料与资源消耗。</li>
+                <li><strong>减污</strong>：减少污染排放，提升环境管理表现。</li>
+                <li><strong>增效</strong>：在制造过程中兼顾效率提升与可持续发展。</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="ehs-policy">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Safety & Health</span>
-          <h3>安全、职业健康政策</h3>
-        </div>
-        <div class="clean-grid">
-          <div class="clean-card">
-            <h4 style="margin-top:0; font-size:24px;">EHS 管理核心原则</h4>
-            <ul class="policy-list">
-              <li><strong>安全第一</strong>：将安全作为生产经营的重要前提。</li>
-              <li><strong>预防为主</strong>：强化风险预防与事前管理意识。</li>
-              <li><strong>综合治理</strong>：从制度、现场、流程多方面协同推进。</li>
-              <li><strong>全员参与</strong>：推动全体人员共同落实安全与健康责任。</li>
-              <li><strong>持续改进</strong>：不断优化职业健康与安全管理表现。</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="clean-policy">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Cleaner Production</span>
-          <h3>清洁生产政策</h3>
-        </div>
-        <div class="clean-grid">
-          <div class="clean-card">
-            <h4 style="margin-top:0; font-size:24px;">绿色制造与持续改善方向</h4>
-            <ul class="policy-list">
-              <li><strong>节能</strong>：提升能源使用效率，减少能源浪费。</li>
-              <li><strong>降耗</strong>：优化生产过程，降低物料与资源消耗。</li>
-              <li><strong>减污</strong>：减少污染排放，提升环境管理表现。</li>
-              <li><strong>增效</strong>：在制造过程中兼顾效率提升与可持续发展。</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section id="certification">
       <div class="container">
